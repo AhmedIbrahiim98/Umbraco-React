@@ -1,8 +1,35 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using React
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = null;
+    Layout = null;
 }
 
-<h1 style="text-align:center">@Model.Value("Title")</h1>
-<p>@Model.Value("Description")</p>
+@* <div style="text-align:center">
+    <h1>@Model.Value("Title")</h1>
+    <p>@Model.Value("Description")</p>
+</div>
+ *@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+</head>
+<body>
+    <h1 style="text-align:center">Hi from home Page</h1>
+
+    <div id="content"></div>
+
+
+    @* <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script> *@
+    <script src="@Url.Content("~/js/App.jsx")"></script>
+
+</body>
+</html>
+
